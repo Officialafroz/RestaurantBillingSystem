@@ -33,6 +33,7 @@ public class BillingSystem {
             tempNo = sc.nextInt();
             for(int j = 0; j < n; i++) {
                 if((tempNo-1) == No[j]) {
+                    //the comiler stops working after this line
                     System.out.println(No[j] + "  " + Items[j] + "  " + Quantity[1] + "  " + Price[j]);
                     Total[i] = Quantity[1] * Price[j];
                     TotalQuantity++;
