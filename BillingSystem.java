@@ -2,7 +2,7 @@ import java.util.*;
 public class BillingSystem {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of food items : ");
+        System.out.print("Enter the number of food items : ");
         int n = sc.nextInt();
         int No[] = new int[n];
         String Items[] = new String[n];
@@ -24,17 +24,21 @@ public class BillingSystem {
             Quantity[i] = 1;
             System.out.print("Enter the Price : ");
             Price[i] = sc.nextFloat();
-            
         }
+        System.out.println();
+
+        // for(int i = 0; i < n; i++) {
+        //     System.out.println(No[i] + " " + Items[i] + " " + Quantity[i] + " " + Price[i]);
+        // }
 
         System.out.println("Running bill :- ");
+        System.out.println("No  Items\tQuantity  Price ");
         for(int i = 0; i < n; i++) {
-            System.out.print("Enter ItemNo : ");
+            
             tempNo = sc.nextInt();
-            for(int j = 0; j < n; i++) {
-                if((tempNo-1) == No[j]) {
-                    //the comiler stops working after this line
-                    System.out.println(No[j] + "  " + Items[j] + "  " + Quantity[1] + "  " + Price[j]);
+            for(int j = 0; j < n; j++) {
+                if((tempNo) == No[j]) {
+                    System.out.println("     " + Items[j] + "\t  " + Quantity[1] + "\t  " + Price[j]);
                     Total[i] = Quantity[1] * Price[j];
                     TotalQuantity++;
                 }
@@ -44,14 +48,14 @@ public class BillingSystem {
             tempNo = 0;
         }
 
-        System.out.println("Total Quantity : " + TotalQuantity);
-        System.out.println("Discount % : ");
+        System.out.println("\nTotal Quantity : " + TotalQuantity + "\n");
+        System.out.print("Discount % : ");
         DiscPer = sc.nextFloat();
-        System.out.println("Total Amount : " + TotalAmount);
+        System.out.println("\nTotal Amount    : " + TotalAmount);
         DiscAmount = (TotalAmount*DiscPer)/100;
         System.out.println("Discount Amount : " + DiscAmount);
         FinalAmount = TotalAmount-DiscAmount;
-        System.out.println("Final Amount : " + FinalAmount);
+        System.out.println("Final Amount    : " + FinalAmount);
 
         sc.close();
 
