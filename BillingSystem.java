@@ -27,26 +27,25 @@ public class BillingSystem {
         }
         System.out.println();
 
-        // for(int i = 0; i < n; i++) {
-        //     System.out.println(No[i] + " " + Items[i] + " " + Quantity[i] + " " + Price[i]);
-        // }
-
         System.out.println("Running bill :- ");
         System.out.println("No  Items\tQuantity  Price ");
-        for(int i = 0; i < n; i++) {
-            
+
+        int i = 0;
+        do{  
             tempNo = sc.nextInt();
+            if(tempNo == 0) {
+                break;
+            }
             for(int j = 0; j < n; j++) {
                 if((tempNo) == No[j]) {
                     System.out.println("     " + Items[j] + "\t  " + Quantity[1] + "\t  " + Price[j]);
                     Total[i] = Quantity[1] * Price[j];
                     TotalQuantity++;
-                }
-                
+                } 
             }
             TotalAmount = TotalAmount + Total[i];
             tempNo = 0;
-        }
+        } while(tempNo != 0);
 
         System.out.println("\nTotal Quantity : " + TotalQuantity + "\n");
         System.out.print("Discount % : ");
